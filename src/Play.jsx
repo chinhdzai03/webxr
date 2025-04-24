@@ -45,7 +45,8 @@ export default function Play() {
                         <ambientLight intensity={0.4} />
                         <pointLight  intensity={1.5} position={[100, 100, 100]}  />
 
-                        { scene === 1 ? <Scene1 bgImg={bgImg}></Scene1> : <Scene2></Scene2> }
+                        {/* { scene === 1 ? <Scene1 bgImg={bgImg}></Scene1> : <Scene2></Scene2> } */}
+                        <Scene1 bgImg={bgImg}></Scene1>
                 
                         <Box onPointerDown={handleTele} position={[-10, 10, 10]} args={[3, 3, 3]}>
                             <meshLambertMaterial attach="material" color="red" />

@@ -6,7 +6,7 @@ import { useControls } from 'leva'
 
 function Background( {bgImg} ) {
     //const {number} = useControls({number: {value: 0 , min: 0, max: 20 , step :1}, myBarColor: { r: 200, b: 125, g: 106, a: 0.4 },})
-    const texture1 = useLoader(THREE.TextureLoader , '2294472375_24a3b8ef46_o.jpg')
+    const texture1 = useLoader(THREE.TextureLoader , '13.jpg')
     const texture2 = useLoader(THREE.TextureLoader , 'bryan-goff-IuyhXAia8EA-unsplash.jpg')
     const [curr , setCurr] = useState(texture1)
     // console.log(bgImg)

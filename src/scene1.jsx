@@ -15,7 +15,7 @@ function Scene1({bgImg}) {
         <Physics>
             {/* <PlayerControls/> */}
             <Ground/>
-            <CubeContent/>
+            {/* <CubeContent/> */}
         </Physics>
         <Background bgImg={bgImg}/>
         <PivotObj/>

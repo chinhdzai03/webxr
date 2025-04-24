@@ -12,13 +12,13 @@ function Scene1({bgImg}) {
   return (
     <group>
         {/* <PointerLockControls/> */}
-        <Physics>
-            {/* <PlayerControls/> */}
+        {/* <Physics>
+            <PlayerControls/>
             <Ground/>
-            {/* <CubeContent/> */}
-        </Physics>
+            <CubeContent/>
+        </Physics> */}
         <Background bgImg={bgImg}/>
-        <PivotObj/>
+        {/* <PivotObj/> */}
     </group>
   )
 }

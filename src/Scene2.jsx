@@ -108,9 +108,9 @@ function Scene2() {
       <Box ref={objRef} position={[10, 10, 10]} args={[1, 1, 1]}>
         <meshBasicMaterial map={grasstexture} attach="material" color="green" />
       </Box>
-      <Html position={[5, 5, 5]} distanceFactor={10} occlude="raycast" transform rotation={[0, 0, 0]} >
+      {/* <Html position={[5, 5, 5]} distanceFactor={10} occlude="raycast" transform rotation={[0, 0, 0]} >
         <div onClick={handleSend} style={{ padding: "15px", background: "white", borderRadius: "8px", fontSize:"24px" ,color:"black"}}>Send</div>
-      </Html>
+      </Html> */}
       <CameraControls ref={cameraRef}/>
     </group>
   )

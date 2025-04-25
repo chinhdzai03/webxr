@@ -7,7 +7,25 @@ import Scene2 from "./Scene2";
 import Scene1 from "./scene1";
 import { XR, createXRStore } from '@react-three/xr'
 
-const store = createXRStore()
+const store = createXRStore({
+    emulate: {
+        controller: {
+            left: {
+                position: [-0.15649, 1.43474, -0.38368],
+                quaternion: [
+                0.14766305685043335, -0.02471366710960865, -0.0037767395842820406,
+                0.9887216687202454,
+                ],
+            },
+            right: {
+                position: [0.15649, 1.43474, -0.38368],
+                quaternion: [
+                0.14766305685043335, 0.02471366710960865, -0.0037767395842820406,
+                0.9887216687202454,
+                ],
+            },
+        },
+  },})
 
 
 export default function Play() {
@@ -45,10 +63,10 @@ export default function Play() {
                         <ambientLight intensity={0.4} />
                         <pointLight  intensity={1.5} position={[100, 100, 100]}  />
 
-                        {/* { scene === 1 ? <Scene1 bgImg={bgImg}></Scene1> : <Scene2></Scene2> } */}
-                        <Scene1 bgImg={bgImg}></Scene1>
+                        { scene === 1 ? <Scene1 bgImg={bgImg}></Scene1> : <Scene2></Scene2> }
+                        {/* <Scene1 bgImg={bgImg}></Scene1> */}
                 
-                        <Box onPointerDown={handleTele} position={[-10, 10, 10]} args={[3, 3, 3]}>
+                        <Box pointerEventsType={handleTele} position={[-10, 10, 10]} args={[3, 3, 3]}>
                             <meshLambertMaterial attach="material" color="red" />
                         </Box>
                         <OrbitControls makeDefault />

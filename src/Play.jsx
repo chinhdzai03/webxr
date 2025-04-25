@@ -8,7 +8,7 @@ import Scene1 from "./scene1";
 import { XR, createXRStore } from '@react-three/xr'
 
 const store = createXRStore({
-//     emulate: {
+    // emulate: {
 //         controller: {
 //             left: {
 //                 position: [-0.15649, 1.43474, -0.38368],
@@ -31,7 +31,7 @@ const store = createXRStore({
 
 export default function Play() {
     const [bgImg , setBgImg] = useState(null)
-    const [scene, setScene] = useState(2)
+    const [scene, setScene] = useState(1)
 
     console.log(navigator.xr)
 

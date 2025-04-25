@@ -13,7 +13,7 @@ function CubeContent() {
     }
   return (
     <group>
-        <Box position={[10, 10, 10]} args={[5, 5, 5]} onPointerDown={handleClick}>
+        <Box position={[10, 10, 10]} args={[5, 5, 5]} onClick={handleClick}>
             <meshStandardMaterial attach="material-0" color="red" />   
             <meshStandardMaterial attach="material-1" color="blue" />  
             <meshStandardMaterial attach="material-2" color="green" /> 

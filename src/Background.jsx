@@ -31,7 +31,7 @@ function Background( {bgImg} ) {
             <sphereGeometry attach="geometry" args={[500, 60, 40]}  />
             <meshBasicMaterial attach="material" map={curr} side={THREE.BackSide} />
         </mesh>
-        <Sphere position={[25, 10, -10]} args={[2, 32, 32]} onPointerDown={handleChange}  >
+        <Sphere position={[25, 10, -10]} args={[2, 32, 32]} onClick={handleChange}  >
             <meshStandardMaterial attach="material" color="red" />
             <Text position={[0, 0, 2.05]} fontSize={0.5} color="white">Change Background</Text>
         </Sphere>

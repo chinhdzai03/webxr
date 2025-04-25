@@ -7,7 +7,7 @@ function Film() {
 
     const [isPlaying , setIsPlaying] = useState(true) ;
     const [isHide , setIsHide] = useState(false)
-    const [isMusic , setIsMusic] = useState(true)
+    const [isMusic , setIsMusic] = useState(false)
     
     const handlePause =() => {
         if (texture.image) {
@@ -42,16 +42,16 @@ function Film() {
                   {/* <VideoMaterial src="10.mp4" ></VideoMaterial> */}
                   <meshBasicMaterial side={2} map={texture} toneMapped={false} transparent opacity={isHide ? 0 : 1} />
               </Suspense>
-              <Box position={[-1,-6,0]} args={[1,1,1]} onPointerDown={handlePause}>
+              <Box position={[-1,-6,0]} args={[1,1,1]} onClick={handlePause}>
                   <meshBasicMaterial color="white"/>
                   <Text color="black" fontSize={0.5} position={[0,0,0.55]}>||</Text>
               </Box>
-              <Box position={[1,-6,0]} args={[1,1,1]} onPointerDown={handleHide}>
+              <Box position={[1,-6,0]} args={[1,1,1]} onClick={handleHide}>
                   <meshBasicMaterial color="white"/>
                   <Text color="black" fontSize={0.5} position={[0,0,0.55]}>{isHide ? "👁" : "🚫"}</Text>
               </Box>
           </Plane>
-          <Box position={[10,4,-10]} args={[2,1,1]} onPointerDown={handlePlayMusic}>
+          <Box position={[10,4,-10]} args={[2,1,1]} onClick={handlePlayMusic}>
                   <meshBasicMaterial color="white"/>
                   <Text color="black" fontSize={0.5} position={[0,0,0.55]}>🎵</Text>
           </Box>

@@ -51,7 +51,7 @@ function Film() {
                   <Text color="black" fontSize={0.5} position={[0,0,0.55]}>{isHide ? "👁" : "🚫"}</Text>
               </Box>
           </Plane>
-          <Box position={[10,4,-10]} args={[2,1,1]} onClick={handlePlayMusic}>
+          {/* <Box position={[10,4,-10]} args={[2,1,1]} onClick={handlePlayMusic}>
                   <meshBasicMaterial color="white"/>
                   <Text color="black" fontSize={0.5} position={[0,0,0.55]}>🎵</Text>
           </Box>
@@ -61,7 +61,7 @@ function Film() {
             distance={3}
             loop
             autoplay
-          />
+          /> */}
         </group>
   )
 }

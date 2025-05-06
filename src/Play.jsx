@@ -13,7 +13,7 @@ const store = createXRStore({
     teleportPointer: true,
     emulate: false, // Tắt mô phỏng controller nếu không cần
   },
-  hand: { rayPointer: { rayModel: { color: 'red' } } },
+  // hand: { rayPointer: { rayModel: { color: 'red' } } },
 });
 
 export default function Play() {

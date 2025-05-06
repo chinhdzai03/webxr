@@ -1,14 +1,13 @@
 import { useFrame , useThree } from "@react-three/fiber"
 import { useXRInputSourceState, XROrigin } from "@react-three/xr"
 import { useRef } from "react"
-import { Group } from "three"
 
 
 export default function Locomotion() {
     const controller = useXRInputSourceState('controller', 'right')
     const ref = useRef(null) // Ensure the type is THREE.Group
     const SPEED = 3 ;
-    const ZOOM_SPEED = 2; 
+    const ZOOM_SPEED = 1; 
     
 
     useFrame((_, delta) => {
@@ -23,12 +22,15 @@ export default function Locomotion() {
         ref.current.position.z += (thumbstickState.yAxis ?? 0) * delta * SPEED
 
         // Opt1
+        if (controller.gamepad == null) {
+            return
+        }
 
-        if (controller.gamepad.buttons[0]?.pressed) {
+        if (controller?.gamepad?.buttons[0]?.pressed) {
             ref.current.position.z -= delta * ZOOM_SPEED;
         }
 
-        if (controller.gamepad.buttons[1]?.pressed) {
+        if (controller?.gamepad?.buttons[1]?.pressed) {
             ref.current.position.z += delta * ZOOM_SPEED;
         }
 

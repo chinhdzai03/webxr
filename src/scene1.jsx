@@ -10,10 +10,10 @@ function Scene1({bgImg}) {
 
   return (
     <group>
-        {/* <PointerLockControls/> */}
+        <PointerLockControls/>
         <Physics>
-            {/* <PlayerControls/> */}
-            {/* <Ground/> */}
+            <PlayerControls/>
+            <Ground/>
             <CubeContent/>
         </Physics>
         <Background bgImg={bgImg}/>

@@ -15,7 +15,7 @@ export function Ground() {
     <RigidBody type="fixed" colliders={false}>
       <mesh position={[0, 0, 0]} rotation-x={-Math.PI / 2}>
         <planeGeometry args={[1000, 1000]} />
-        <meshBasicMaterial map={texture} color="green" transparent opacity={0.0} />
+        <meshBasicMaterial map={texture} color="green" transparent opacity={0.8} />
       </mesh>
       <CuboidCollider args={[1000, 3, 1000]} position={[0, 0, 0]} />
     </RigidBody>

@@ -22,17 +22,17 @@ export default function Locomotion() {
         ref.current.position.z += (thumbstickState.yAxis ?? 0) * delta * SPEED
 
         // Opt1
-        if (controller.gamepad == null) {
-            return
-        }
+        // if (controller.gamepad == null) {
+        //     return
+        // }
 
-        if (controller?.gamepad?.buttons[0]?.pressed) {
-            ref.current.position.z -= delta * ZOOM_SPEED;
-        }
+        // if (controller?.gamepad?.buttons[0]?.pressed) {
+        //     ref.current.position.z -= delta * ZOOM_SPEED;
+        // }
 
-        if (controller?.gamepad?.buttons[1]?.pressed) {
-            ref.current.position.z += delta * ZOOM_SPEED;
-        }
+        // if (controller?.gamepad?.buttons[1]?.pressed) {
+        //     ref.current.position.z += delta * ZOOM_SPEED;
+        // }
 
         // Opt2
 

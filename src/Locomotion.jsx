@@ -25,6 +25,17 @@ export default function Locomotion() {
        
         console.log(controller)
 
+        if(controller?.gamepad?.buttons.length >= 2) {
+            const buttonA = inputSource.gamepad.buttons[0];
+            const buttonB = inputSource.gamepad.buttons[1];
+            if (buttonA.pressed) {
+                ref.current.position.z -= delta * ZOOM_SPEED;
+            }
+            if (buttonB.pressed) {
+                ref.current.position.z += delta * ZOOM_SPEED;
+            }
+        }
+
         // if (controller?.gamepad?.buttons[0]?.pressed) {
         //     ref.current.position.z -= delta * ZOOM_SPEED;
         // }

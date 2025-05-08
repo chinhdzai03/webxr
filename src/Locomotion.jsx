@@ -5,9 +5,10 @@ import { useRef } from "react"
 
 export default function Locomotion() {
     const controller = useXRInputSourceState('controller', 'right')
+    const controller_left = useXRInputSourceState('controller', 'left')
     const ref = useRef(null) // Ensure the type is THREE.Group
     const SPEED = 3 ;
-    const ZOOM_SPEED = 1; 
+    const ZOOM_SPEED = 5; 
     
 
     useFrame((_, delta) => {
@@ -25,16 +26,20 @@ export default function Locomotion() {
        
         console.log(controller)
 
-        if(controller?.gamepad?.buttons.length >= 2) {
-            const buttonA = inputSource.gamepad.buttons[2];
-            const buttonB = inputSource.gamepad.buttons[3];
-            if (buttonA.pressed) {
-                ref.current.position.z -= delta * ZOOM_SPEED;
+        // const thumbstickState_left = controller_left.gamepad['xr-standard-thumbstick']
+
+        if (controller_left?.gamepad) {
+            const thumbstickLeft = controller_left.gamepad["xr-standard-thumbstick"];
+            if (thumbstickLeft) {
+              const yAxis = thumbstickLeft.yAxis ?? 0;
+              const fovStep = yAxis * delta * ZOOM_SPEED;
+      
+              // Zoom out (push stick down = yAxis > 0), Zoom in (stick up = yAxis < 0)
+              camera.fov = Math.min(100, Math.max(10, camera.fov + fovStep));
+              camera.updateProjectionMatrix();
             }
-            if (buttonB.pressed) {
-                ref.current.position.z += delta * ZOOM_SPEED;
-            }
-        }
+          }
+
 
         // if (controller?.gamepad?.buttons[0]?.pressed) {
         //     ref.current.position.z -= delta * ZOOM_SPEED;

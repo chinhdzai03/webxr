@@ -12,7 +12,7 @@ export default function Locomotion() {
     
 
     useFrame((_, delta) => {
-        if (ref.current == null || controller == null) {
+        if (ref.current == null || controller == null || controller_left == null) {
             return
         }
         const thumbstickState = controller.gamepad['xr-standard-thumbstick']
@@ -24,21 +24,24 @@ export default function Locomotion() {
 
         // Opt1
        
-        console.log(controller)
+        // console.log(controller)
 
         // const thumbstickState_left = controller_left.gamepad['xr-standard-thumbstick']
 
-        if (controller_left?.gamepad) {
-            const thumbstickLeft = controller_left.gamepad["xr-standard-thumbstick"];
-            if (thumbstickLeft) {
-              const yAxis = thumbstickLeft.yAxis ?? 0;
-              const fovStep = yAxis * delta * ZOOM_SPEED;
+        
+            // const thumbstickLeft = controller_left.gamepad["xr-standard-thumbstick"];
+            // if (thumbstickLeft == null) {
+            //     return;
+            //     }
+           
+            //   const yAxis = thumbstickLeft.yAxis ?? 0;
+            //   const fovStep = yAxis * delta * ZOOM_SPEED;
       
-              // Zoom out (push stick down = yAxis > 0), Zoom in (stick up = yAxis < 0)
-              camera.fov = Math.min(100, Math.max(10, camera.fov + fovStep));
-              camera.updateProjectionMatrix();
-            }
-          }
+            //   // Zoom out (push stick down = yAxis > 0), Zoom in (stick up = yAxis < 0)
+            //   camera.fov = Math.min(100, Math.max(10, camera.fov + fovStep));
+            //   camera.updateProjectionMatrix();
+            
+        
 
 
         // if (controller?.gamepad?.buttons[0]?.pressed) {

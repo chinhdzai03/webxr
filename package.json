@@ -10,12 +10,18 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@ant-design/icons": "^5.6.1",
+    "@emotion/react": "^11.14.0",
+    "@emotion/styled": "^11.14.0",
+    "@mui/material": "^7.1.1",
+    "@react-spring/three": "^10.0.1",
     "@react-three/cannon": "^6.6.0",
     "@react-three/drei": "^10.0.3",
     "@react-three/fiber": "^9.0.4",
     "@react-three/rapier": "^2.0.0",
     "@react-three/xr": "^6.6.16",
     "axios": "^1.8.2",
+    "hls.js": "^1.6.5",
     "lava": "^0.13.6",
     "leva": "^0.10.0",
     "react": "^19.0.0",

@@ -1,15 +1,14 @@
 
-import './App.css'
-import Demo from './Demo'
-import Scene from './TestControls'
+import './css/App.css'
+
 import Play from './Play'
+import Video from './Video'
 
 function App() {
   return (
     <>
-      {/* <Demo></Demo> */}
-      {/* <Scene></Scene> */}
-      <Play></Play>
+      {/* <Play></Play> */}
+      <Video/>
     </>
   )
 }

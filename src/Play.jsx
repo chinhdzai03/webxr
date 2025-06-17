@@ -2,11 +2,12 @@ import { Canvas } from "@react-three/fiber";
 import { Sky, Box } from "@react-three/drei";
 import { XR, XROrigin, createXRStore} from "@react-three/xr";
 import {useState } from "react";
-import SelectBg from "./SelectBg";
+import SelectBg from "./components/SelectBg";
 import Scene1 from "./scene1";
 import Scene2 from "./Scene2";
-import Locomotion from "./Locomotion";
+import Locomotion from "./components/Locomotion";
 import { OrbitControls } from "@react-three/drei";
+import Scene3 from "./Scene3";
 
 const store = createXRStore({
   controller: {
@@ -15,9 +16,11 @@ const store = createXRStore({
   },
   // hand: { rayPointer: { rayModel: { color: 'red' } } },
 });
+console.log("session",store);
 
 export default function Play() {
   const [bgImg, setBgImg] = useState(null);
+  const [pause, setPause] = useState(false);
   const [scene, setScene] = useState(1);
 //   const xrOriginRef = useRef();
 
@@ -45,7 +48,7 @@ export default function Play() {
 
       <Canvas
         shadows
-        camera={{ fov: 60, position: [30, 30, 30] }}
+        camera={{ fov: 90, position: [1, 1, 1] }}
         onCreated={({ gl }) => {
           gl.setSize(window.innerWidth, window.innerHeight);
         }}
@@ -62,19 +65,23 @@ export default function Play() {
           <Locomotion />
 
           {/* Scene Switching */}
-          {scene === 1 ? <Scene1 bgImg={bgImg} /> : <Scene2 />}
+          {/* {scene === 1 ? <Scene1 bgImg={bgImg} /> : <Scene2 />} */}
 
           {/* Switch Scene Button (Box) */}
-          <Box onClick={handleToggleScene} position={[-10, 10, 10]} args={[3, 3, 3]}>
+          {/* <Box onClick={handleToggleScene} position={[-10, 10, 10]} args={[3, 3, 3]}>
             <meshLambertMaterial attach="material" color="blue" />
-          </Box>
+          </Box> */}
 
           {/* OrbitControls only when not in XR */}
+
+          <Scene3 pause={pause} setPause={setPause} />
           {!store.session && <OrbitControls makeDefault />}
+          <axesHelper args={[10]} />
+
         </XR>
       </Canvas>
-
-      <SelectBg setBgImg={setBgImg} />
+      
+      {/* <SelectBg setBgImg={setBgImg} /> */}
     </>
   );
 }

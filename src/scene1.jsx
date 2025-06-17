@@ -1,9 +1,9 @@
 import { Physics } from '@react-three/rapier'
 import React from 'react'
-import PlayerControls from './PlayerControl'
-import { Ground } from './Ground'
-import CubeContent from './CubeContent'
-import Background from './Background'
+import PlayerControls from './components/PlayerControl'
+import { Ground } from './components/Ground'
+import CubeContent from './components/CubeContent'
+import Background from './components/Background'
 import { PointerLockControls } from '@react-three/drei'
 
 function Scene1({bgImg}) {
